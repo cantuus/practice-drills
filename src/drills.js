@@ -4,17 +4,17 @@ function sockMerchant(n, ar) {
 
     let sockOrganizer = {}
 
-    for (let i = 0; i < ar.length; i++) {
-        if (!sockOrganizer[i]) {
-            sockOrganizer[i] = 1;
+    ar.forEach(sock => {
+        if (!sockOrganizer[sock]) {
+            sockOrganizer[sock] = 1;
         }
-        if (sockOrganizer[i] === 2) {
+        else if (sockOrganizer[ar[sock]] === 2) {
             pairs += 1;
         }
         else {
-            sockOrganizer[i] += 1;
+            sockOrganizer[sock] += 1;
         }
-    }
+    });
 
     return pairs;
 
